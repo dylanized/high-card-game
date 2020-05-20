@@ -1,0 +1,15 @@
+<html>
+<head>
+  <title>High Card</title>
+   <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+  <div id="app">
+    <game-header :user-wins="this.userWins" :dealer-wins="this.dealerWins" :num-cards="this.numCards"></game-header>
+    <h1>High Card</h1>
+    <game-hand></game-hand>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
