@@ -98,7 +98,8 @@ class DeckClass {
     return this.hasCards() ? this.cards.pop() : false;
   }
   hasCards() {
-    return this.cards.length > 0 ? true : false;
+    // if cards left, return true, else return false
+    return (this.cards.length > 0);
   }
 }
 
