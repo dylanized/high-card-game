@@ -82,8 +82,16 @@ class DeckClass {
     };
   }
   shuffle() {
-    // randomly resort the cards
-    this.cards.sort(function() { return 0.5 - Math.random() });
+    // define shuffle helper
+    function shuffleArray(array) {
+      // from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+    // shuffle cards
+    shuffleArray(this.cards);
   }
   deal() {
     // if there's cards left
@@ -197,16 +205,9 @@ new Vue({
     getNumCards() {
       this.numCards = deck.cards.length;
     },
-    shuffleArray(array) {
-      // from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-    }
   },
   created() {
     // when app starts, shuffle the deck
-    this.shuffleArray(deck.cards);
+    deck.shuffle();
   },
 });
