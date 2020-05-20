@@ -94,13 +94,8 @@ class DeckClass {
     shuffleArray(this.cards);
   }
   deal() {
-    // if there's cards left
-    if (this.hasCards()) {
-      // grab the top card and return it
-      return this.cards.pop();
-    }
-    // else no cards, return false
-    return false;
+    // if there's cards left, grab the top card and return it, else return false
+    return this.hasCards() ? this.cards.pop() : false;
   }
   hasCards() {
     return this.cards.length > 0 ? true : false;
