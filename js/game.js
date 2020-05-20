@@ -170,15 +170,17 @@ Vue.component('game-hand', {
       this.dealerCard = deck.deal();
       // update number of cards
       this.$root.getNumCards();
-      // determine winner
+      // if user won, set result and increment user wins
       if (this.userCard.value > this.dealerCard.value) {
         this.result = 1;
         this.$root.userWins++;
       }
+      // else if dealer won, set result and increment dealer wins
       else if (this.userCard.value < this.dealerCard.value) {
         this.result = 2;
         this.$root.dealerWins++;
       }
+      // else set result to tie
       else this.result = 0;
     },
     displayCard(card) {
