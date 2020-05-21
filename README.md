@@ -6,3 +6,6 @@ Each hand the user and dealer are delt a card. The high card wins. If the cards 
 To play, visit `index.html`.
 
 To play again, refresh the page.
+
+Deployed here: 
+http://labshosting.com/highcard/
